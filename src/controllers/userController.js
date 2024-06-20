@@ -16,6 +16,7 @@ exports.addUser = async (req, res) => {
       dob
     });
     await newUser.save();
+    console.log('user added successfully', newUser)
     res.status(200).send('User added successfully!');
   } catch (error) {
     console.error('Error adding user:', error);
