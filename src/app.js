@@ -18,6 +18,11 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", userRoutes);
 
+// Log the paths for debugging
+console.log('Serving static files from:', path.join(__dirname, 'public'));
+console.log('Serving index.html from:', path.join(__dirname, 'public', 'index.html'));
+
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
