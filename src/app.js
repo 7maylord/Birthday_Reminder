@@ -13,13 +13,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (HTML and CSS)
-app.use(express.static(path.join(__dirname, "src" , "public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Routes
 app.use("/", userRoutes);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "src" , "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
 //catch all route
